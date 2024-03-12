@@ -226,3 +226,17 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
             self.request, 'Form Invalid. Please check your input.'
         )
         return response
+
+
+# ------- Comment Views --------
+
+class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    A view for updating a comment.
+    Requires the user to be logged in and pass the test_func() method to update the comment.
+    """
+
+    model = Comment
+    fields = ['content']
+    template_name = 'blog/comment/update-comment.html'
+
