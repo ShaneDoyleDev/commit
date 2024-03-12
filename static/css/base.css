@@ -69,3 +69,72 @@ select {
   background: none;
   border: none;
 }
+
+/* Typography */
+
+html {
+  /*  This allows for easier conversion of pixel values to rem units. */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-black);
+  font-size: var(--fs-body);
+}
+
+p {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+}
+
+.section-heading,
+.post-detail-heading,
+.post-card-heading {
+  font-weight: var(--fw-bold);
+}
+
+.section-heading {
+  font-size: var(--fs-section-heading);
+}
+
+.post-detail-heading {
+  font-size: var(--fs-post-detail-heading);
+}
+
+.post-card-heading {
+  font-size: var(--fs-post-card-heading);
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.post-card-subheading,
+.post-detail-subheading {
+  color: var(--clr-grey);
+  font-size: var(--fs-post-card-subheading);
+}
+
+.post-card-excerpt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-post-card-excerpt);
+  gap: 10px;
+}
+
+.drop-cap {
+  font-size: var(--fs-drop-cap);
+  text-transform: uppercase;
+}
+
+.link-text {
+  color: var(--clr-secondary);
+  font-weight: var(--fw-bold);
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
