@@ -20,6 +20,18 @@
             <section id="category-menu-section">
                 {% include "blog/includes/category-menu.html" %}
             </section>
+
+            <!-- Recent posts Section -->
+            <section id="recent-posts-section">
+                <h1 class="section-heading text-center">Recent posts</h1>
+
+                <div class="post-card-container">
+                    <!-- Looping through the recent posts and including the post card for each one -->
+                    {% for post in recent_posts %}
+                        {% include "blog/includes/post-card.html" %}
+                    {% endfor %}
+                </div>
+            </section>
         </div>
     </main>
 {% endblock %}
