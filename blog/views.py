@@ -256,3 +256,10 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
         return reverse('post-detail', args=[str(self.object.post.slug)])
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(
+            self.request, 'Your comment has been updated successfully.'
+        )
+        return response
+
