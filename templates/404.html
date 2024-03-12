@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Write post{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/404.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <!-- Main content of the 404 page -->
+    <section class="page-404-section">
+        <h1 class="page-404-heading">404</h1>
+
+        <img class="page-404-image" src="{% static "images/404-page-image.webp" %}" alt="Decorative image of a question mark">
+
+        <div class="page-404-text-info">
+            <h2>That page doesn't exist!</h2>
+            <p>Sorry, the page you were looking for could not be found.</p>
+        </div>
+
+        <div class="page-404-link-container">
+            <img src="{% static "images/icons/arrow-left-icon.svg" %}" alt="Left arrow" style="width:15px;">
+            <a class="link-text" href="{% url "homepage" %}">Return to homepage</a>
+        </div>
+    </section>
+{% endblock %}
