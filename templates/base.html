@@ -119,5 +119,19 @@
 
         <!-- Main content -->
         {% block content %}{% endblock content %}
+
+        <!-- Footer -->
+        <footer>
+            <!-- Top image -->
+            <img class="footer-top-image" src="{% static "images/footer-image.webp" %}" alt="Footer decorative image">
+
+            <!-- Footer content -->
+            <div class="footer-content">
+                <a class="color-perspectives-category" href="#navbar">
+                    Back to top <img class="footer-icon"  src="{% static "images/icons/arrow-up-icon.svg" %}" alt="Arrow up icon" width="13" height="13">
+                </a>
+                <p>Made with <img class="footer-icon" src="{% static "images/icons/heart-icon-solid.svg" %}" alt="Heart icon" width="16" height="16"> by <a class="color-perspectives-category" href="/">Shane Doyle</a></p>
+            </div>
+        </footer>
     </body>
 </html>
