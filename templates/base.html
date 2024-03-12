@@ -21,6 +21,11 @@
         {% block css %}{% endblock css %}
     </head>
     <body>
-
+        <!-- Toast Messages -->
+        {% for message in messages %}
+            <div class="toast-message">
+                {{ message }}
+            </div>
+        {% endfor %}
     </body>
 </html>
