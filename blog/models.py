@@ -101,3 +101,6 @@ class Profile(models.Model):
     github_url = models.URLField(max_length=250, blank=True, default='')
     linkedin_url = models.URLField(max_length=250, blank=True, default='')
     medium_url = models.URLField(max_length=250, blank=True, default='')
+
+    def __str__(self):
+        return f'{self.user.username}\'s Profile'
