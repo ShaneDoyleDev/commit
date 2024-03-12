@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load blog_filters %}
+
+{% block title %}{{ user.username|title }}'s posts{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/post/user-posts.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <!-- Main content of the user posts page -->
+    <main class="container">
+        <!-- User posts Section -->
+        <section class="user-posts-section">
+            <h1 class="section-heading text-center">{{ user.username|title }}'s posts</h1>
+
+            {% if posts %}
+            {% for post in posts %}
+                <div class="post-card-container">
+                    {% include "blog/includes/post-card.html" %}
+                </div>
+            {% endfor %}
+            {% else %}
+                <div class="empty-post-content">
+                    <p class="empty-post-heading">Currently no posts to display.</p>
+                    <a class="btn btn-primary btn-lg empty-post-btn" href="{% url 'create-post' %}">Write post</a>
+                </div>
+            {% endif %}
+        </section>
+    </main>
+{% endblock %}
