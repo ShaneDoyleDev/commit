@@ -296,3 +296,9 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
         return reverse('post-detail',  args=[str(self.object.post.slug)])
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(
+            self.request, 'Your comment has been deleted successfully.'
+        )
+        return response
