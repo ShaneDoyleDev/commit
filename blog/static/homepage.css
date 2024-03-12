@@ -55,3 +55,16 @@
   z-index: 1;
   visibility: hidden;
 }
+
+/* Social Media Section */
+#social-media-section {
+  padding: 50px;
+}
+
+.social-media-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
