@@ -16,3 +16,8 @@ navbarCloseBtn.addEventListener("click", function () {
   navbarDropdown.classList.remove("show-navbar-dropdown");
 });
 
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 800) {
+    navbarDropdown.classList.remove("show-navbar-dropdown");
+  }
+});
