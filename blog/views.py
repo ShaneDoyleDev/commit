@@ -160,3 +160,17 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         messages.error(
             self.request, 'Form Invalid. Please check your input.')
         return response
+
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    View for deleting a post.
+
+    Requires the user to be logged in and pass the test_func() method to access the view.
+    Deletes the specified post and redirects to the 'all-posts' URL upon successful deletion.
+    """
+
+    model = Post
+    template_name = 'blog/post/delete-post.html'
+    success_url = reverse_lazy('all-posts')
+
