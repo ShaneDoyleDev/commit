@@ -47,3 +47,11 @@ class Post(models.Model):
         else:
             # Return the URL to the default image in the static directory
             return static('images/default-post-image.webp')
+
+    def get_author_profile_picture_url(self):
+        """Returns the URL of the author's profile picture or a default static image URL."""
+
+        if self.author.profile.profile_picture:
+            return self.author.profile.profile_picture.url
+        else:
+            return static('images/default-profile-image.webp')
