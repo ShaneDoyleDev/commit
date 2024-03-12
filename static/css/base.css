@@ -479,3 +479,89 @@ label[for="post_image-clear_id"] {
   background: var(--clr-black);
   animation: fadeIn 600ms ease-in-out, fadeOut 600ms 5s forwards;
 }
+
+/* Utility Classes */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-bold {
+  font-weight: var(--fw-bold);
+}
+
+.text-regular {
+  font-weight: var(--fw-regular);
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.color-primary {
+  color: var(--clr-primary);
+}
+
+.color-secondary {
+  color: var(--clr-secondary);
+}
+
+.color-white {
+  color: var(--clr-white);
+}
+
+.color-black {
+  color: var(--clr-black);
+}
+
+.color-grey {
+  color: var(--clr-grey);
+}
+
+.color-light-grey {
+  color: var(--clr-light-grey);
+}
+
+.color-warning {
+  color: var(--clr-warning);
+}
+
+.color-all-posts-category {
+  color: var(--clr-primary);
+}
+
+.color-frontend-category {
+  color: var(--clr-frontend-category);
+}
+
+.color-backend-category {
+  color: var(--clr-backend-category);
+}
+
+.color-design-category {
+  color: var(--clr-design-category);
+}
+
+.color-devops-category {
+  color: var(--clr-devops-category);
+}
+
+.color-perspectives-category {
+  color: var(--clr-perspectives-category);
+}
