@@ -565,3 +565,16 @@ label[for="post_image-clear_id"] {
 .color-perspectives-category {
   color: var(--clr-perspectives-category);
 }
+
+/* CSS Animations */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
