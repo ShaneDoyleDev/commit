@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load blog_filters %}
+
+{% block title %}Commit{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <!-- Main content of the article page -->
+    <div class="container">
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "js/category-menu.js" %}"></script>
+{% endblock scripts %}
