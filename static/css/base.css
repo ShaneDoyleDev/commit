@@ -138,3 +138,30 @@ p {
 .link-text:hover {
   text-decoration: underline;
 }
+
+/* Layout Components */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.post-card-container {
+  display: grid;
+  gap: 60px;
+  padding-top: 80px;
+}
+
+.post-btn-container {
+  position: absolute;
+  display: flex;
+}
+
+@media (min-width: 800px) {
+  .post-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
