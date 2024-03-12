@@ -1,1 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap");
+
+/* CSS Variables */
+:root {
+  /* Color Palette */
+  --clr-primary: #fbb62e;
+  --clr-secondary: #6349e0;
+  --clr-frontend-category: #2b6eb4;
+  --clr-backend-category: #216b51;
+  --clr-design-category: #ef6192;
+  --clr-devops-category: #f05a22;
+  --clr-perspectives-category: #6349e0;
+  --clr-warning: #e44e4e;
+  --clr-warning-hover: #f05a22;
+  --clr-black: #333333;
+  --clr-grey: #949494;
+  --clr-light-grey: #e2e1e5;
+  --clr-white: #ffffff;
+}
