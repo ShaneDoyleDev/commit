@@ -42,3 +42,16 @@ class PostListView(ListView):
     template_name = 'blog/post/post-list.html'
     paginate_by = 6
 
+    def get_queryset(self):
+        """
+        Returns the queryset for the view.
+
+        If a category filter is provided in the request parameters,
+        the queryset will be filtered based on the category.
+        """
+
+        queryset = super().get_queryset()
+        category = self.request.GET.get('filter', None)
+        if category:
+            queryset = queryset.filter(category=category)
+        return queryset
