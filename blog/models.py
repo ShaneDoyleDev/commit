@@ -104,3 +104,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username}\'s Profile'
+
+    def profile_picture_url(self):
+        """
+        Returns the URL of the profile picture for the user.
+        If a profile picture is set, the URL of the profile picture is returned.
+        """
+        if self.profile_picture:
+            return self.profile_picture.url
+        else:
+            # Return the URL to the default image in the static directory
+            return static('images/default-profile-image.webp')
