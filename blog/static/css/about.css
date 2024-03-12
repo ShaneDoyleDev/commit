@@ -1,0 +1,28 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 80px;
+  padding-inline: 30px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  gap: 30px;
+}
+
+.about-image {
+  width: 400px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.about-text {
+  text-align: center;
+  font-size: 2.5rem;
+  max-width: 600px;
+}
