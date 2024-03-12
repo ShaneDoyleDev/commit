@@ -39,3 +39,5 @@ class CustomLoginView(LoginView):
         messages.success(self.request, 'You have successfully logged in.')
         return super().form_valid(form)
 
+    def get_success_url(self):
+        return reverse_lazy('homepage')
