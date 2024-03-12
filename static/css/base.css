@@ -578,3 +578,14 @@ label[for="post_image-clear_id"] {
     transform: translateY(0);
   }
 }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
