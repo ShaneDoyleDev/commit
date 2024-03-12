@@ -17,3 +17,14 @@ class PostAdmin(SummernoteModelAdmin):
     date_hierarchy = 'created_on'
     ordering = ['created_on']
     summernote_fields = ['content']
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """
+    Admin class for managing Comment model in the Django admin interface.
+    """
+
+    list_display = ['author', 'content', 'post', 'created_at', 'updated_at']
+    list_filter = ['created_at', 'author']
+    search_fields = ['content', 'author__username', 'post__title']
