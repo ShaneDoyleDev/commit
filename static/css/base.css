@@ -16,4 +16,17 @@
   --clr-grey: #949494;
   --clr-light-grey: #e2e1e5;
   --clr-white: #ffffff;
+
+  /* Typography */
+  --ff-primary: "Playfair Display", serif;
+  --ff-secondary: "Inter", sans-serif;
+  --fs-section-heading: 5rem; /* 50px */
+  --fs-post-card-heading: 2.6rem; /* 26px */
+  --fs-post-card-subheading: 1.2rem; /* 12px */
+  --fs-post-card-excerpt: 1.4rem; /* 14px */
+  --fs-pagination-page: 2rem; /* 20px */
+  --fs-drop-cap: 4.8rem; /* 48px */
+  --fs-body: 1.6rem; /* 16px */
+  --fw-bold: 700;
+  --fw-regular: 400;
 }
