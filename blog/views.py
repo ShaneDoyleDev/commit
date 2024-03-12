@@ -183,3 +183,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         post = self.get_object()
         return self.request.user == post.author or self.request.user.is_superuser
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(
+            self.request, 'Your post has been deleted successfully.'
+        )
+        return response
