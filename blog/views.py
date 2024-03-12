@@ -66,3 +66,9 @@ class UserPostListView(LoginRequiredMixin, ListView):
     template_name = 'blog/post/user-posts.html'
     context_object_name = 'posts'
 
+    def get_queryset(self):
+        """
+        Override the get_queryset method to filter posts by the signed-in user.
+        """
+
+        return Post.objects.filter(author=self.request.user)
