@@ -27,6 +27,23 @@
                 {% endfor %}
             </div>
         </section>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+            <div class="pagination-control" href="?page={{ page_obj.previous_page_number }}">
+                <img src="{% static "images/icons/arrow-left-icon.svg" %}" width="12" height="12" alt="Left arrow">
+                <a class="link-text" href="?page={{ page_obj.previous_page_number }}">prev</a>
+            </div>
+            {% endif %}
+            <span class="pagination-current-page">{{ page_obj.number }}</span>
+            {% if page_obj.has_next %}
+                <div class="pagination-control">
+                    <a class="link-text" href="?page={{ page_obj.next_page_number }}">next</a>
+                    <img src="{% static "images/icons/arrow-right-icon.svg" %}" width="12" height="12" alt="Right arrow">
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
 
