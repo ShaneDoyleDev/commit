@@ -28,3 +28,12 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ['author', 'content', 'post', 'created_at', 'updated_at']
     list_filter = ['created_at', 'author']
     search_fields = ['content', 'author__username', 'post__title']
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    """
+    Admin class for managing Profile model in the Django admin interface.
+    """
+    form = ProfileForm
+    search_fields = ['user__username']
