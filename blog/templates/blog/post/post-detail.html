@@ -45,6 +45,58 @@
                     {{ post.content|safe }}
                 </section>
             </div>
+
+            <hr class="post-detail-hr">
+
+            <!-- Comments Section -->
+            <section class="comments-section">
+                <!-- Total Comments -->
+                {% with comments.count as total_comments %}
+                    <h2 class="comments-heading">{{ total_comments }} Comment{{ total_comments|pluralize }}</h2>
+                {% endwith %}
+
+                <!-- Comments List -->
+                <ul class="post-comment-list">
+                    {% for comment in comments %}
+                        <li class="comment-item">
+                            <div class="comment-item-text">
+                                <p class="comment-author">{{ comment.author|title }} | {{ comment.created_at|date:"F j Y" }}</p>
+                                <p class="comment-content">{{ comment.content|title }}</p>
+                            </div>
+
+                            {% if user.is_authenticated and user == comment.author or user.is_superuser %}
+                                <div class="comment-btn-container">
+                                    <a class="btn btn-circle profile-edit-btn" href="{% url "update-comment" comment.id %}" aria-label="Edit comment">
+                                        <img src="{% static "images/icons/edit-icon.svg" %}" alt="Edit icon">
+                                    </a>
+                                    <a class="btn btn-circle profile-edit-btn" href="{% url "delete-comment" comment.id %}" aria-label="Delete comment">
+                                        <img src="{% static "images/icons/cross-icon.svg" %}" alt="Delete icon">
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% empty %}
+                        <li>No comments yet.</li>
+                    {% endfor %}
+                </ul>
+
+                <!-- Add Comment Form -->
+                {% if user.is_authenticated %}
+                    <form class="form comment-form" method="POST" action="{% url 'post-detail' post.slug %}" >
+                        {% csrf_token %}
+                        {% for field in comment_form %}
+                            <div class="form-field">
+                                {{ field.errors }}
+                                <label for="{{ field.auto_id }}" class="hidden">{{ field.label }}</label>
+                                {{ field }}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" style="width: max-content;" class="btn btn-primary btn-sm">Publish</button>
+                    </form>
+                {% else %}
+                    <p>Have something to say? <a href="{% url "login" %}">Sign in</a> to leave a comment.</p>
+                {% endif %}
+            </section>
         </section>
     </main>
 {% endblock %}
