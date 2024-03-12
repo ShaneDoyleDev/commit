@@ -90,6 +90,14 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
+# Forms
+SUMMERNOTE_CONFIG = {
+    'toolbar': [
+        ['style', ['style', 'bold', 'italic', 'underline']],
+        ['font', ['strikethrough']],
+        ['para', ['ul', 'ol', 'paragraph']],
+    ]
+}
 
 
 # Database
