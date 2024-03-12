@@ -55,3 +55,12 @@ class Post(models.Model):
             return self.author.profile.profile_picture.url
         else:
             return static('images/default-profile-image.webp')
+
+    def save(self, *args, **kwargs):
+        """
+        Overrides the save method to automatically generate a slug if it doesn't exist.
+        """
+
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
