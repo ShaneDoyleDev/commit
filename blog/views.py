@@ -174,3 +174,12 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = 'blog/post/delete-post.html'
     success_url = reverse_lazy('all-posts')
 
+    def test_func(self):
+        """
+        Checks if the current user is the author of the post or a superuser.
+        Returns True if the current user is the author of the comment, False otherwise.
+        """
+
+        post = self.get_object()
+        return self.request.user == post.author or self.request.user.is_superuser
+
