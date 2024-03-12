@@ -26,3 +26,12 @@ class SignUpView(CreateView):
         messages.success(
             self.request, 'Account created successfully! You are now logged in.')
         return valid
+
+
+class CustomLoginView(LoginView):
+    """
+    Custom view for logging in a user.
+    """
+
+    template_name = 'accounts/login.html'
+
