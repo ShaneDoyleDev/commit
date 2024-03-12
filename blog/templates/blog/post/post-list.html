@@ -16,6 +16,17 @@
         <section id="category-menu-section">
             {% include "blog/includes/category-menu.html" %}
         </section>
+
+        <!-- Posts Section -->
+        <section id="posts-section">
+            <h1 class="section-heading text-center">Articles</h1>
+            <div class="post-card-container">
+                <!-- Looping through the posts and including the post card for each one -->
+                {% for post in page_obj %}
+                    {% include "blog/includes/post-card.html" %}
+                {% endfor %}
+            </div>
+        </section>
     </div>
 {% endblock %}
 
