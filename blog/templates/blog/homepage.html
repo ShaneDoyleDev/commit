@@ -13,6 +13,14 @@
     <main>
         <!-- Hero Section -->
         <img src="{% static "images/hero-image.webp" %}" alt="Hero image" class="hero-image">
+
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Category Menu Section -->
+            <section id="category-menu-section">
+                {% include "blog/includes/category-menu.html" %}
+            </section>
+        </div>
     </main>
 {% endblock %}
 
