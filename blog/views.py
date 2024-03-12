@@ -105,3 +105,16 @@ def post_detail_view(request, slug):
         'comments': comments,
         'comment_form': comment_form
     })
+
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    """
+    View class for creating a new post.
+    Requires user to be logged in.
+    """
+
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/post/create-post.html'
+    success_url = reverse_lazy('homepage')
+
