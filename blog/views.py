@@ -189,3 +189,14 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             self.request, 'Your post has been deleted successfully.'
         )
         return response
+
+
+# ------- Profile Views --------
+
+class ProfileDetailView(DetailView):
+    """
+    View for displaying the details of a user's profile.
+    """
+
+    model = Profile
+    template_name = 'blog/profile/profile-detail.html'
