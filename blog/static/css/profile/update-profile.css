@@ -1,0 +1,21 @@
+.update-profile-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  padding-inline: 30px;
+  gap: 30px;
+  min-height: calc(100vh - 220px);
+}
+
+.update-profile-heading {
+  text-align: center;
+  font-size: var(--fs-section-heading);
+}
+
+label[for="profile_picture-clear_id"],
+#profile_picture-clear_id {
+  display: none;
+}
