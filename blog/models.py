@@ -33,3 +33,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        """Returns the absolute URL for the current instance."""
+
+        return reverse('post-detail', kwargs={'slug': self.slug})
