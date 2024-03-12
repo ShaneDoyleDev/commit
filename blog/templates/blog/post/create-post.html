@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Write post{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/post/create-post.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <!-- Main content of the create post page -->
+    <main class="create-post-section">
+        <h1 class="create-post-heading">Write Post</h1>
+        <!-- Form for creating a new post -->
+        <form class="form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary btn-lg" type="submit">Publish</button>
+        </form>
+    </main>
+{% endblock %}
