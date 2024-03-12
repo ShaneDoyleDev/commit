@@ -38,3 +38,12 @@ class Post(models.Model):
         """Returns the absolute URL for the current instance."""
 
         return reverse('post-detail', kwargs={'slug': self.slug})
+
+    def get_post_image(self):
+        """Returns the URL of the hero image or a default static image URL."""
+
+        if self.post_image and hasattr(self.post_image, 'url'):
+            return self.post_image.url
+        else:
+            # Return the URL to the default image in the static directory
+            return static('images/default-post-image.webp')
