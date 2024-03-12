@@ -68,3 +68,23 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
+
+
+class ProfileForm(forms.ModelForm):
+    """
+    A form for updating the user's profile.
+    """
+
+    class Meta:
+        model = Profile
+        fields = ['profile_picture', 'bio', 'birthday', 'country',
+                  'city', 'profession', 'website_url', 'github_url']
+        widgets = {
+            'birthday': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(ProfileForm, self).__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.required = False
+            self.fields['profile_picture'].label = "Profile Picture"
