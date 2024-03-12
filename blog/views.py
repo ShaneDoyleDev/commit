@@ -213,3 +213,10 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'blog/profile/update-profile.html'
     success_url = reverse_lazy('homepage')
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(
+            self.request, 'Your profile has been updated successfully.'
+        )
+        return response
+
