@@ -115,3 +115,11 @@ class Profile(models.Model):
         else:
             # Return the URL to the default image in the static directory
             return static('images/default-profile-image.webp')
+
+    def delete(self, *args, **kwargs):
+        """
+        Deletes the model instance and its associated image from Cloudinary.
+        """
+
+        destroy(self.profile_picture.public_id)
+        super().delete(*args, **kwargs)
