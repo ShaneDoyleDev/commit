@@ -81,3 +81,23 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+
+class Profile(models.Model):
+    """Represents a user's profile information."""
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=100, blank=True)
+    last_name = models.CharField(max_length=100, blank=True)
+    profile_picture = CloudinaryField(
+        'image', folder='commit/profile_images', blank=True
+    )
+    bio = models.TextField(blank=True, default='')
+    birthday = models.DateField(null=True, blank=True)
+    profession = models.CharField(max_length=100, default='')
+    city = models.CharField(max_length=100, blank=True, default='')
+    country = models.CharField(max_length=100, blank=True, default='')
+    website_url = models.URLField(max_length=250, blank=True, default='')
+    github_url = models.URLField(max_length=250, blank=True, default='')
+    linkedin_url = models.URLField(max_length=250, blank=True, default='')
+    medium_url = models.URLField(max_length=250, blank=True, default='')
