@@ -33,6 +33,22 @@
                 </div>
             </section>
         </div>
+
+        <!-- CTA Section -->
+        <section id="signup-cta-section">
+            <img class="cta-image" src="{% static "images/cta-image.webp" %}" alt="Cta image">
+
+            <div class="cta-signup">
+                <!-- If the user is authenticated, show a prompt to write an post. Otherwise, show a signup prompt. -->
+                {% if user.is_authenticated %}
+                    <h3 class="cta-heading">Feeling <span class="color-primary">inspired?</span></h3>
+                    <a class="btn btn-primary btn-lg" href="{% url 'create-post' %}">Write post</a>
+                {% else %}
+                    <h3 class="cta-heading"><span class="color-primary">Sign up</span> and become <br> a writer today</h3>
+                    <a class="btn btn-primary btn-lg" href="{% url 'signup' %}">Sign Up</a>
+                {% endif %}
+            </div>
+        </section>
     </main>
 {% endblock %}
 
