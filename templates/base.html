@@ -133,5 +133,12 @@
                 <p>Made with <img class="footer-icon" src="{% static "images/icons/heart-icon-solid.svg" %}" alt="Heart icon" width="16" height="16"> by <a class="color-perspectives-category" href="/">Shane Doyle</a></p>
             </div>
         </footer>
+
+        <!-- Scripts -->
+        <script src="{% static "js/navbar.js" %}"></script>
+        <script src="{% static "js/messages.js" %}"></script>
+
+        <!-- Additional scripts -->
+        {% block scripts %}{% endblock scripts %}
     </body>
 </html>
