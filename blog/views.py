@@ -29,3 +29,16 @@ class AboutView(TemplateView):
     """
 
     template_name = 'blog/about.html'
+
+
+# ------- Post Views --------
+
+class PostListView(ListView):
+    """
+    View class for listing all posts.
+    """
+
+    model = Post
+    template_name = 'blog/post/post-list.html'
+    paginate_by = 6
+
