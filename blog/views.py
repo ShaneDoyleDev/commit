@@ -148,3 +148,10 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'blog/post/create-post.html'
     success_url = reverse_lazy('homepage')
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        response = super().form_valid(form)
+        messages.success(
+            self.request, 'Your post has been updated successfully.')
+        return response
+
