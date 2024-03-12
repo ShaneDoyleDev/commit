@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Update Profile{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/profile/update-profile.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <!-- Main content of the update post page -->
+    <main class="update-profile-section">
+        <h1 class="update-profile-heading">Update Profile</h1>
+        <!-- Form for creating a new post -->
+        <form class="form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary btn-lg" type="submit">Publish</button>
+        </form>
+    </main>
+{% endblock %}
