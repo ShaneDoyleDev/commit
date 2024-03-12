@@ -11,3 +11,47 @@
   padding-top: 50px;
   padding-bottom: 100px;
 }
+
+/* Cta Section */
+#signup-cta-section {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.cta-image {
+  height: 50%;
+  object-fit: cover;
+}
+
+.cta-heading {
+  color: var(--clr-white);
+  font-size: 3.5rem;
+  font-weight: var(--fw-regular);
+}
+
+.cta-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-basis: 50%;
+  position: relative;
+  text-align: center;
+  background-color: var(--clr-black);
+  overflow: hidden;
+}
+
+.cta-signup-image {
+  position: absolute;
+  right: 0;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  transform: translateX(50%);
+  z-index: 1;
+  visibility: hidden;
+}
