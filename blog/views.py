@@ -118,3 +118,15 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = 'blog/post/create-post.html'
     success_url = reverse_lazy('homepage')
 
+    def form_valid(self, form):
+        """
+        Override the form_valid method to set the author of the form instance
+        to the currently logged-in user.
+        """
+
+        form.instance.author = self.request.user
+        response = super().form_valid(form)
+        messages.success(
+            self.request, 'Your post has been created successfully.')
+        return response
+
