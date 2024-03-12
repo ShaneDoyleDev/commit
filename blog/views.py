@@ -240,3 +240,12 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = ['content']
     template_name = 'blog/comment/update-comment.html'
 
+    def test_func(self):
+        """
+        Check if the current user is the author of the comment.
+        Returns True if the current user is the author of the comment, False otherwise.
+        """
+
+        comment = self.get_object()
+        return self.request.user == comment.author
+
