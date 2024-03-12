@@ -41,3 +41,17 @@ class CustomLoginView(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('homepage')
+
+
+class CustomLogoutView(LogoutView):
+    """
+    Custom view for logging out a user.
+    """
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        messages.add_message(
+            request, messages.SUCCESS,
+            'You have been logged out.'
+        )
+        return redirect('homepage')
