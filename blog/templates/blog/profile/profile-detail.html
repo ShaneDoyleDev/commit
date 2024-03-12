@@ -29,5 +29,35 @@
                 {% endif %}
             </section>
         </header>
+
+        <section class="profile-detail-container profile-detail-personal">
+            <h2 class="profile-detail-heading">Personal Information</h2>
+            <section class="profile-detail-grid">
+                <section class="profile-detail-field">
+                    <h3 class="color-grey">First Name</h3>
+                    <p>{{ profile.user.first_name }}</p>
+                </section>
+                <section class="profile-detail-field">
+                    <h3 class="color-grey">Last Name</h3>
+                    <p>{{ profile.user.last_name }}</p>
+                </section>
+                <section class="profile-detail-field profile-dob">
+                    <h3 class="color-grey">Date Of Birth</h3>
+                    {% if profile.birthday %}
+                        <p>{{ profile.birthday }}</p>
+                    {% else %}
+                        <p>None</p>
+                    {% endif %}
+                </section>
+                <section class="profile-detail-field profile-email">
+                    <h3 class="color-grey">Email</h3>
+                    <p>{{ profile.user.email|default:"None" }}</p>
+                </section>
+                <section class="profile-detail-field profile-bio">
+                    <h3 class="color-grey">Bio</h3>
+                    <p>{{ profile.bio|default:"None" }}</p>
+                </section>
+            </section>
+        </section>
     </main>
 {% endblock %}
