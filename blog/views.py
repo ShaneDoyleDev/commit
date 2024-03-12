@@ -289,3 +289,10 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         comment = self.get_object()
         return self.request.user == comment.author or self.request.user.is_superuser
 
+    def get_success_url(self):
+        """
+        Returns the URL of the post related to the comment.
+        """
+
+        return reverse('post-detail',  args=[str(self.object.post.slug)])
+
