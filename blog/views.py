@@ -269,3 +269,14 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             self.request, 'Form Invalid. Please check your input.'
         )
         return response
+
+
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    A view for deleting a comment.
+    Requires the user to be logged in and the comment author to delete the comment.
+    """
+
+    model = Comment
+    template_name = 'blog/comment/delete-comment.html'
+
