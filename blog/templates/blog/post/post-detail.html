@@ -26,5 +26,25 @@
 
             <img src="{{ post.get_post_image }}" alt="{{ post.title }}" class="post-detail-image" style="border-bottom: var({{ post.category|category_color }}) 7px solid;">
         </section>
+
+        <section class="post-detail-section">
+            <!-- Post Content -->
+            <div class="post-detail">
+                <!-- Author Profile Image -->
+                <img class="post-detail-profile-image" src="{{ post.get_author_profile_picture_url }}" alt="Author profile image" style="border: var({{ post.category|category_color }}) 7px solid;">
+                <!-- Post Heading -->
+                <header class="post-detail-heading-content">
+                    <h1 class="section-heading">{{ post.title|title }}</h1>
+                    <p class="post-detail-subheading">by <a class="link-text" href="{% url "profile" post.author.id %}">{{ post.author.first_name }} {{ post.author.last_name }}</a> | {{ post.created_on|date:"F d, Y" }}</p>
+                    <hr class="post-detail-hr">
+                </header>
+
+
+                <!-- Post Body -->
+                <section class="post-content post-detail-body">
+                    {{ post.content|safe }}
+                </section>
+            </div>
+        </section>
     </main>
 {% endblock %}
