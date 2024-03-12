@@ -463,3 +463,19 @@ label[for="post_image-clear_id"] {
 .btn-post-delete img {
   width: 16px;
 }
+
+/* Toast Component */
+
+.toast-message {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  font-family: var(--ff-secondary);
+  color: var(--clr-white);
+  background: var(--clr-black);
+  animation: fadeIn 600ms ease-in-out, fadeOut 600ms 5s forwards;
+}
