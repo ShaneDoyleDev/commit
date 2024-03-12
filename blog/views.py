@@ -135,3 +135,16 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         messages.error(
             self.request, 'Form Invalid. Please check your input.')
         return response
+
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    View class for editing an existing post.
+    Requires user to be logged in.
+    """
+
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/post/create-post.html'
+    success_url = reverse_lazy('homepage')
+
