@@ -5,3 +5,9 @@
   object-fit: cover;
   object-position: center;
 }
+
+/* Recent posts Section */
+#recent-posts-section {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
