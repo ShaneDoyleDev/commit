@@ -155,3 +155,8 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
             self.request, 'Your post has been updated successfully.')
         return response
 
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        messages.error(
+            self.request, 'Form Invalid. Please check your input.')
+        return response
