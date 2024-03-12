@@ -390,3 +390,76 @@ label[for="post_image-clear_id"] {
   font-size: var(--fs-pagination-page);
   font-weight: var(--fw-bold);
 }
+
+/* Button Components */
+
+.btn {
+  display: inline-block;
+  font-family: var(--ff-secondary);
+  font-size: 1.6rem;
+  font-weight: 800;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.btn-lg {
+  padding-block: 15px;
+  padding-inline: 40px;
+}
+
+.btn-sm {
+  padding-block: 10px;
+  padding-inline: 20px;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  padding: 10px;
+  background: var(--clr-white);
+  box-shadow: var(--box-shadow);
+}
+
+.btn-circle img {
+  width: 16px;
+}
+
+.btn-circle:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+}
+
+.btn-primary:hover {
+  color: var(--clr-white);
+  background-color: var(--clr-secondary);
+}
+
+.btn-secondary {
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--clr-light-grey);
+}
+
+.btn-delete {
+  background-color: var(--clr-warning);
+}
+
+.btn-delete:hover {
+  background-color: var(--clr-warning-hover);
+}
+
+.btn-circle:active {
+  transform: scale(0.95);
+}
+
+.btn-post-delete img {
+  width: 16px;
+}
