@@ -200,3 +200,16 @@ class ProfileDetailView(DetailView):
 
     model = Profile
     template_name = 'blog/profile/profile-detail.html'
+
+
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    View class for updating the users profile information.
+    Requires user to be logged in.
+    """
+
+    model = Profile
+    form_class = ProfileForm
+    template_name = 'blog/profile/update-profile.html'
+    success_url = reverse_lazy('homepage')
+
