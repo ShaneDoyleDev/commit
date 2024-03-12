@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load blog_filters %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post/post-detail.css' %}" />
+{% endblock css %}
+
+{% block content %}
+{% endblock %}
