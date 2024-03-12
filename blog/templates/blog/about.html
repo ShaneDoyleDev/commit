@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}About{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <!-- Main content of the about page -->
+    <main>
+        <section class="about">
+            <div class="about-content">
+                <img src="{% static 'images/about-image.webp' %}" alt="Colorful abstract image for about page" class="about-image">
+                <!-- Displaying the about text with different color spans -->
+                <p class="about-text">Commit is a digital space for <span class="color-frontend-category">tech enthusiasts</span>, <span class="color-primary">developers</span>, and <span class="color-design-category">thinkers</span> who believe in the power of sharing knowledge and insights to inspire <span class="color-backend-category">innovation</span> and advance the field of <span class="color-devops-category">web</span> and <span class="color-devops-category">software development</span>.</p>
+            </div>
+        </section>
+    </main>
+{% endblock %}
