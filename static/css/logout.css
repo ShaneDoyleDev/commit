@@ -1,0 +1,16 @@
+.logout-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  padding-inline: 30px;
+  gap: 30px;
+  min-height: calc(100vh - 220px);
+}
+
+.logout-text-content {
+  text-align: center;
+  gap: 5px;
+}
