@@ -1,0 +1,13 @@
+.update-comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  padding-inline: 30px;
+}
+
+.update-comment-heading {
+  text-align: center;
+  font-size: var(--fs-section-heading);
+}
