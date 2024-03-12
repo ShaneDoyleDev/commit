@@ -1,0 +1,35 @@
+{% load static %}
+{% load blog_filters %}
+
+<div class="post-card">
+    <img class="post-card-image" src="{{ post.get_post_image }}" alt="post card hero image" style="border-bottom: var({{ post.category|category_color }}) 5px solid;">
+
+    <div class="post-card-content">
+        <img class="post-card-profile-image" src="{{ post.get_author_profile_picture_url }}" alt="Author profile image" style="border: var({{ post.category|category_color }}) 5px solid;">
+
+        <div class="post-card-title">
+            <a href="{{ post.get_absolute_url }}">
+                <h2 class="post-card-heading">{{ post.title|title }}</h2>
+            </a>
+            <p class="post-card-subheading">Published by <a class="link-text" href="{% url "profile" post.author.id %}">{{ post.author.first_name }} {{ post.author.last_name}}</a> on {{ post.created_on|date:"Y-m-d" }}</p>
+        </div>
+
+        <p class="post-card-excerpt">
+            {{ post.excerpt }}
+            <a class="post-link-text" href="{{ post.get_absolute_url }}">
+                Read full post <img src="{% static "images/icons/arrow-right-icon.svg" %}" alt="Right arrow" class="post-link-arrow">
+            </a>
+        </p>
+    </div>
+
+    {% if user.is_authenticated and user == post.author or user.is_superuser %}
+        <div class="post-btn-container">
+            <a type="submit" class="btn btn-circle" href="{% url "update-post" post.id %}" style="border: var({{ post.category|category_color }}) 3px solid;">
+                <img src="{% static "images/icons/edit-icon.svg" %}" alt="Edit icon of a pencil">
+            </a>
+            <a type="submit" class="btn btn-circle" href="{% url "delete-post" post.id %}" style="border: var({{ post.category|category_color }}) 3px solid;">
+                <img src="{% static "images/icons/cross-icon.svg" %}" alt="">
+            </a>
+        </div>
+    {% endif %}
+</div>
