@@ -1,0 +1,144 @@
+#navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding-inline: 30px;
+  background-color: var(--clr-white);
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar-menu-auth .navbar-menu {
+  gap: 20px;
+}
+
+.navbar-menu-site .navbar-menu {
+  gap: 30px;
+}
+
+.navbar-menu-site,
+.navbar-menu-auth {
+  display: none;
+}
+
+.navbar-menu-link {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-menu-link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: var(--clr-black);
+  transition: width 300ms;
+}
+
+.navbar-menu-link:hover:after {
+  width: 100%;
+}
+
+.navbar-hamburger-btn {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.navbar-profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.navbar-profile-image {
+  width: 40px;
+  height: 40px;
+  border: var(--clr-primary) 2px solid;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (min-width: 800px) {
+  #navbar {
+    padding-inline: 50px;
+  }
+}
+
+/* Responsive Dropdown Menu */
+
+.navbar-dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: all 300ms ease-in-out;
+  background-color: var(--clr-white);
+  z-index: 100;
+}
+
+.show-navbar-dropdown {
+  transform: translateY(0);
+}
+
+.navbar-close-btn {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.navbar-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+}
+
+.navbar-dropdown-menu .btn,
+.dropdown-signup-btn {
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 1050px) {
+  .navbar-menu-site,
+  .navbar-menu-auth {
+    display: block;
+  }
+
+  .navbar-hamburger-btn {
+    display: none;
+  }
+
+  .navbar-menu-site {
+    order: 1;
+  }
+
+  .navbar-menu-auth {
+    order: 3;
+  }
+
+  .navbar-dropdown {
+    display: none;
+  }
+
+  .logo {
+    order: 2;
+  }
+}
