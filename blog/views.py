@@ -21,3 +21,11 @@ def homepage(request):
 
     recent_posts = Post.objects.order_by('-created_on')[:4]
     return render(request, 'blog/homepage.html', {'recent_posts': recent_posts})
+
+
+class AboutView(TemplateView):
+    """
+    View class for the about page of the site.
+    """
+
+    template_name = 'blog/about.html'
