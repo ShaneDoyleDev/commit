@@ -18,3 +18,11 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     template_name = 'accounts/signup.html'
     success_url = reverse_lazy('homepage')
+
+    def form_valid(self, form):
+        valid = super().form_valid(form)
+        user = form.save()
+        login(self.request, user)
+        messages.success(
+            self.request, 'Account created successfully! You are now logged in.')
+        return valid
