@@ -55,3 +55,14 @@ class PostListView(ListView):
         if category:
             queryset = queryset.filter(category=category)
         return queryset
+
+
+class UserPostListView(LoginRequiredMixin, ListView):
+    """
+    View class for listing posts related to the signed-in user.
+    """
+
+    model = Post
+    template_name = 'blog/post/user-posts.html'
+    context_object_name = 'posts'
+
