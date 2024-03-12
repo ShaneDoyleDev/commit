@@ -1,0 +1,28 @@
+.create-post-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  padding-inline: 30px;
+}
+
+.create-post-heading {
+  text-align: center;
+  font-size: var(--fs-section-heading);
+}
+
+.post-post-field {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid var(--clr-light-grey);
+  border-radius: 5px;
+  resize: none;
+}
+
+.post-excerpt-field::placeholder {
+  color: var(--clr-grey);
+  font-size: 14px;
+}
