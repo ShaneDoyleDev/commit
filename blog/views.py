@@ -130,3 +130,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
             self.request, 'Your post has been created successfully.')
         return response
 
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        messages.error(
+            self.request, 'Form Invalid. Please check your input.')
+        return response
