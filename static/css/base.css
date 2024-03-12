@@ -368,3 +368,25 @@ label[for="post_image-clear_id"] {
   color: var(--clr-warning);
   animation: fadeIn 800ms ease-in-out;
 }
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-block: 80px;
+  margin-inline: auto;
+}
+
+.pagination-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination-current-page {
+  font-size: var(--fs-pagination-page);
+  font-weight: var(--fw-bold);
+}
