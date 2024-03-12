@@ -35,3 +35,7 @@ class CustomLoginView(LoginView):
 
     template_name = 'accounts/login.html'
 
+    def form_valid(self, form):
+        messages.success(self.request, 'You have successfully logged in.')
+        return super().form_valid(form)
+
