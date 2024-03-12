@@ -280,3 +280,12 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Comment
     template_name = 'blog/comment/delete-comment.html'
 
+    def test_func(self):
+        """
+        Checks if the current user is the author of the comment.
+        Returns True if the current user is the author of the comment, False otherwise.
+        """
+
+        comment = self.get_object()
+        return self.request.user == comment.author or self.request.user.is_superuser
+
