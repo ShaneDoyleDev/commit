@@ -8,3 +8,13 @@ from django.views.generic.edit import CreateView
 
 # Local application imports
 from .forms import CustomUserCreationForm
+
+
+class SignUpView(CreateView):
+    """
+    Custom view for user sign up and registration.
+    """
+
+    form_class = CustomUserCreationForm
+    template_name = 'accounts/signup.html'
+    success_url = reverse_lazy('homepage')
