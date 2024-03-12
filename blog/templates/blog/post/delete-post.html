@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Delete post{% endblock title %}
+
+{% block css %}
+        <link rel="stylesheet" href="{% static 'css/post/delete-post.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <main>
+        <section class="delete-post-section">
+            <div class="logout-text-content">
+                <h2><span class="color-warning">Confirm Deletion</span> </br> "{{ post.title }}"</h2>
+                <p>Are you sure you want to permanently delete this post?</p>
+            </div>
+            <form method="POST" action="{% url 'delete-post' post.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-lg btn-delete">Delete post</button>
+            </form>
+        </section>
+    </main>
+{% endblock content %}
