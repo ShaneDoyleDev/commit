@@ -30,3 +30,6 @@ class Post(models.Model):
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
     post_image = CloudinaryField('image', folder='commit/post_images')
+
+    def __str__(self):
+        return self.title
