@@ -29,4 +29,8 @@
   --fs-body: 1.6rem; /* 16px */
   --fw-bold: 700;
   --fw-regular: 400;
+
+  /* Layout & Borders */
+  --border-radius: 20px;
+  --box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
