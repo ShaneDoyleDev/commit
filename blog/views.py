@@ -72,3 +72,36 @@ class UserPostListView(LoginRequiredMixin, ListView):
         """
 
         return Post.objects.filter(author=self.request.user)
+
+
+def post_detail_view(request, slug):
+    """
+    View function for displaying the details of a blog post.
+    Renders and handles the comment form for an individual blog post
+    """
+
+    post = get_object_or_404(Post, slug=slug)
+    comments = post.comments.all()
+
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.author = request.user
+            comment.save()
+            messages.success(
+                request, 'Your comment has been added successfully.'
+            )
+            return redirect('post-detail', slug=slug)
+        else:
+            messages.error(
+                request, 'Form Invalid. Please check your input.'
+            )
+    else:
+        comment_form = CommentForm()
+    return render(request, 'blog/post/post-detail.html', {
+        'post': post,
+        'comments': comments,
+        'comment_form': comment_form
+    })
