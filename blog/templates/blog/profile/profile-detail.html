@@ -59,5 +59,27 @@
                 </section>
             </section>
         </section>
+
+        <section class="profile-detail-container profile-detail-social">
+            <h2 class="profile-detail-heading">Social Information</h2>
+            <section class="profile-detail-grid">
+                <section class="profile-detail-field profile-website">
+                    <h3 class="color-grey">Personal Website</h3>
+                    <p>{{ profile.website_url|default:"None" }}</p>
+                </section>
+                <section class="profile-detail-field">
+                    <h3 class="color-grey">Github</h3>
+                    <p>{{ profile.github_url|default:"None" }}</p>
+                </section>
+                <section class="profile-detail-field">
+                    <h3 class="color-grey">Linkedin</h3>
+                    <p>{{ profile.linkedin_url|default:"None" }}</p>
+                </section>
+                <section class="profile-detail-field">
+                    <h3 class="color-grey">Medium</h3>
+                    <p>{{ profile.medium_url|default:"None" }}</p>
+                </section>
+            </section>
+        </section>
     </main>
 {% endblock %}
