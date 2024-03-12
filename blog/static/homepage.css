@@ -68,3 +68,28 @@
   max-width: 600px;
   margin-inline: auto;
 }
+
+@media (min-width: 400px) {
+  .cta-heading {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 980px) {
+  #signup-cta-section {
+    flex-direction: row;
+  }
+
+  .cta-image {
+    width: 50%;
+    height: 100%;
+  }
+
+  .cta-signup-image {
+    visibility: visible;
+  }
+
+  .cta-heading {
+    width: 380px;
+  }
+}
