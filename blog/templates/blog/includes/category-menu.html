@@ -1,0 +1,54 @@
+<div class="category-menu">
+    <div class="category-menu-line" style="background-color: var(--clr-primary);"></div>
+
+    <ul class="category-menu-selection">
+        <!-- All posts Category -->
+        <li class="category-menu-item" data-category="all-posts">
+            <a href="{% url 'all-posts' %}">
+                <div class="category-menu-selector all-posts-menu-selector">
+                    <span class="category-menu-selector-text">All posts</span>
+                </div>
+            </a>
+        </li>
+        <!-- Front-end Category -->
+        <li class="category-menu-item" data-category="frontend">
+            <a href="{% url 'all-posts' %}?filter=frontend">
+                <div class="category-menu-selector frontend-menu-selector">
+                    <span class="category-menu-selector-text">Frontend</span>
+                </div>
+            </a>
+        </li>
+        <!-- Back-end Category -->
+        <li class="category-menu-item" data-category="backend">
+            <a href="{% url 'all-posts' %}?filter=backend">
+                <div class="category-menu-selector backend-menu-selector">
+                    <span class="category-menu-selector-text">Backend</span>
+                </div>
+            </a>
+        </li>
+        <!-- UI/UX Design Category -->
+        <li class="category-menu-item" data-category="design">
+            <a href="{% url 'all-posts' %}?filter=design">
+                <div class="category-menu-selector design-menu-selector">
+                    <span class="category-menu-selector-text" style="left: -7px;">UI/UX Design</span>
+                </div>
+            </a>
+        </li>
+        <!-- Devops Category -->
+        <li class="category-menu-item" data-category="devops">
+            <a href="{% url 'all-posts' %}?filter=devops">
+                <div class="category-menu-selector devops-menu-selector">
+                    <span class="category-menu-selector-text">Devops</span>
+                </div>
+            </a>
+        </li>
+        <!-- Perspectives Category -->
+        <li class="category-menu-item" data-category="perspectives">
+            <a href="{% url 'all-posts' %}?filter=perspectives">
+                <div class="category-menu-selector perspectives-menu-selector">
+                    <span class="category-menu-selector-text" style="left: -7px;">Perspectives</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
