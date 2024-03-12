@@ -165,3 +165,73 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Category Menu */
+.category-menu {
+  margin-block: 50px;
+}
+
+.category-menu-line {
+  position: relative;
+  width: 90%;
+  margin-inline: auto;
+  top: 15px;
+  height: 3px;
+  border-radius: var(--border-radius);
+  z-index: -1;
+  transition: background 300ms ease-in-out;
+}
+
+.category-menu-selection {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.category-menu-selector {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: var(--clr-white);
+  border: var(--clr-primary) 3px solid;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.category-menu-selector:hover .category-menu-selector-text {
+  visibility: visible;
+  transform: translate(-25%, -60%);
+  opacity: 1;
+}
+
+.category-menu-selector-text {
+  visibility: hidden;
+  position: absolute;
+  top: -100%;
+  opacity: 0;
+  text-align: center;
+  width: max-content;
+  transform: translate(-25%, -30%);
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.frontend-menu-selector:hover {
+  border-color: var(--clr-frontend-category);
+}
+
+.backend-menu-selector:hover {
+  border-color: var(--clr-backend-category);
+}
+
+.design-menu-selector:hover {
+  border-color: var(--clr-design-category);
+}
+
+.devops-menu-selector:hover {
+  border-color: var(--clr-devops-category);
+}
+
+.perspectives-menu-selector:hover {
+  border-color: var(--clr-perspectives-category);
+}
