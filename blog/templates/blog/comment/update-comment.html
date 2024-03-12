@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Update comment{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/comment/update-comment.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <!-- Main content of the update comment page -->
+    <section class="update-comment-section">
+        <h1 class="update-comment-heading">Update Comment</h1>
+        <!-- Form for updating an existing comment -->
+        <form class="form" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary btn-lg" type="submit">Publish</button>
+        </form>
+    </section>
+{% endblock %}
