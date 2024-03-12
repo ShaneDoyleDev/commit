@@ -1,0 +1,23 @@
+.user-posts-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  padding-inline: 30px;
+  min-height: calc(100vh - 220px);
+}
+
+.empty-post-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.empty-post-btn {
+  width: max-content;
+  justify-self: center;
+}
