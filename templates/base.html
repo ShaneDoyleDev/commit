@@ -27,5 +27,94 @@
                 {{ message }}
             </div>
         {% endfor %}
+
+        <!-- Navigation -->
+        <header id="navbar">
+            <!-- Logo -->
+            <a class="logo" href="/">
+                <img src="{% static "images/icons/logo-icon.svg" %}" alt="Logo of Commit">
+            </a>
+
+            <!-- Hamburger menu button -->
+            <img
+                class="navbar-hamburger-btn"
+                src="{% static "images/icons/hamburger-icon.svg" %}"
+                alt="Hamburger menu"
+                aria-label="Open Menu"
+                width="24"
+                height="24"
+            />
+
+            <!-- Site menu -->
+            <nav class="navbar-menu-site">
+                <ul class="navbar-menu">
+                    <li><a href="{% url "homepage" %}" class="navbar-menu-link">Home</a></li>
+                    <li><a href="{% url "all-posts" %}" class="navbar-menu-link">Articles</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'user-posts' %}" class="navbar-menu-link">My Articles</a></li>
+                    {% endif %}
+                    <li><a href="{% url "about" %}" class="navbar-menu-link">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Auth menu -->
+            <nav class="navbar-menu-auth">
+                <ul class="navbar-menu">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm">Create Article</a></li>
+                        <li><a href="{% url 'logout' %}" class="btn btn-primary btn-sm">Logout</a></li>
+                        <a href="{% url "profile" user.profile.id %}">
+                            <li class="navbar-profile-container">
+                                <img class="navbar-profile-image" src="{{ user.profile.profile_picture_url }}">My Profile
+                            </li>
+                        </a>
+                    {% else %}
+                        <li><a href="{% url 'login' %}" class="btn btn-secondary btn-sm">Login</a></li>
+                        <li><a href="{% url 'signup' %}" class="btn btn-primary btn-sm">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+            <!-- Dropdown Navigation -->
+            <nav class="navbar-dropdown">
+                <!-- Close menu button -->
+                <img
+                    class="navbar-close-btn"
+                    src="{% static "images/icons/cross-icon.svg" %}"
+                    alt="Close menu"
+                    aria-label="Close Menu"
+                    width="24"
+                    height="24"
+                />
+
+                <!-- Dropdown menu -->
+                <ul class="navbar-dropdown-menu">
+                    <li>
+                        <a href="/">
+                            <img src="{% static "images/icons/logo-icon.svg" %}" alt="Logo of Commit">
+                        </a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <a href="{% url "profile" user.profile.id %}">My Profile</a>
+                    </li>
+                    {% endif %}
+                    <li><a href="/" class="navbar-menu-link">Articles</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'user-posts' %}" class="navbar-menu-link">My Articles</a></li>
+                    {% endif %}
+                    <li><a href="{% url "about" %}" class="navbar-menu-link">About</a></li>
+
+                    <hr>
+
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm">Create post</a></li>
+                        <li><a href="{% url 'logout' %}" class="btn btn-primary btn-lg">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}" class="btn btn-secondary btn-lg">Login</a></li>
+                        <li><a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
     </body>
 </html>
