@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+
+{% block css %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <section class="login-section">
+        <h1 class="section-heading">Login</h1>
+
+        <form class="form" method="POST" action="{{ login_url }}">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary btn-lg" type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account? <a class="link-text" href="{% url "signup" %}">Sign Up</a></p>
+    </section>
+{% endblock content %}
