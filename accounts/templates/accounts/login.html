@@ -11,7 +11,7 @@
 {% block content %}
     <section class="login-section">
         <h1 class="section-heading">Login</h1>
-
+        <img class="form-image" src="{% static "images/icons/form-icon.svg" %}" alt="a decortive form element">
         <form class="form" method="POST" action="{{ login_url }}">
             {% csrf_token %}
             {{ form }}
