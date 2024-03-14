@@ -12,6 +12,7 @@
     <!-- Main content of the create post page -->
     <main class="create-post-section">
         <h1 class="create-post-heading">Write Post</h1>
+        <img class="form-image" src="{% static "images/icons/form-icon.svg" %}" alt="a decortive form element">
         <!-- Form for creating a new post -->
         <form class="form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
