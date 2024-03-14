@@ -12,6 +12,7 @@
     <!-- Main content of the update post page -->
     <main class="update-profile-section">
         <h1 class="update-profile-heading">Update Profile</h1>
+        <img class="form-image" src="{% static "images/icons/form-icon.svg" %}" alt="a decortive form element">
         <!-- Form for creating a new post -->
         <form class="form" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
