@@ -302,3 +302,69 @@ p {
   width: 12px;
   transform: translateY(1px);
 }
+
+/* Forms */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 550px;
+  padding-bottom: 30px;
+}
+
+.form-image {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input,
+.form textarea,
+.form select {
+  padding: 10px;
+  width: 100%;
+  border: var(--clr-light-grey) 1px solid;
+  border-radius: 5px;
+}
+
+.form a {
+  font-size: var(--fs-body);
+  color: var(--clr-secondary);
+  font-weight: var(--fw-bold);
+}
+
+.form br {
+  display: none;
+}
+
+.form button {
+  width: 100%;
+}
+
+input[type="file"],
+select {
+  cursor: pointer;
+}
+
+label[for="post_image-clear_id"] {
+  display: none;
+}
+
+.helptext,
+#post_image-clear_id {
+  display: none;
+}
+
+.errorlist {
+  font-family: var(--ff-secondary);
+  text-align: center;
+  color: var(--clr-warning);
+  animation: fadeIn 800ms ease-in-out;
+}
