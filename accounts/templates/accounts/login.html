@@ -14,7 +14,7 @@
         <img class="form-image" src="{% static "images/icons/form-icon.svg" %}" alt="a decortive form element">
         <form class="form" method="POST" action="{{ login_url }}">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_p }}
             <button class="btn btn-primary btn-lg" type="submit">Login</button>
         </form>
 
