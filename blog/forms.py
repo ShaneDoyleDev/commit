@@ -18,7 +18,8 @@ class PostForm(forms.ModelForm):
         max_length=100,
         error_messages={
             'required': 'This field is required.',
-            'max_length': 'Ensure this value has at most 100 characters (it has %(show_value)d).',
+            'max_length':
+            'Ensure value has at most 100 characters (it has %(show_value)d).',
         }
     )
     post_image = CloudinaryFileField(
@@ -36,7 +37,8 @@ class PostForm(forms.ModelForm):
         max_length=250,
         error_messages={
             'required': 'This field is required.',
-            'max_length': 'Ensure this value has at most 250 characters (it has %(show_value)d).',
+            'max_length':
+            'Ensure value has at most 250 characters (it has %(show_value)d).',
         }
     )
     content = forms.CharField(
