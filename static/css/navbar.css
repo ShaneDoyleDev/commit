@@ -73,6 +73,11 @@
   object-fit: cover;
 }
 
+#navbar a {
+  text-decoration: none;
+  color: var(--clr-black);
+}
+
 @media (min-width: 800px) {
   #navbar {
     padding-inline: 50px;
