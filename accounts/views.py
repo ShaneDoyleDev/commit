@@ -24,7 +24,8 @@ class SignUpView(CreateView):
         user = form.save()
         login(self.request, user)
         messages.success(
-            self.request, 'Account created successfully! You are now logged in.')
+            self.request,
+            'Account created successfully! You are now logged in.')
         return valid
 
 
@@ -36,7 +37,8 @@ class CustomLoginView(LoginView):
     template_name = 'accounts/login.html'
 
     def form_valid(self, form):
-        messages.success(self.request, 'You have successfully logged in.')
+        messages.success(self.request,
+                         'You have successfully logged in.')
         return super().form_valid(form)
 
     def get_success_url(self):
