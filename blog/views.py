@@ -21,7 +21,8 @@ def homepage(request):
     """
 
     recent_posts = Post.objects.order_by('-created_on')[:4]
-    return render(request, 'blog/homepage.html', {'recent_posts': recent_posts})
+    return render(request, 'blog/homepage.html',
+                  {'recent_posts': recent_posts})
 
 
 class AboutView(TemplateView):
@@ -167,8 +168,10 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     View for deleting a post.
 
-    Requires the user to be logged in and pass the test_func() method to access the view.
-    Deletes the specified post and redirects to the 'all-posts' URL upon successful deletion.
+    Requires the user to be logged in and pass
+    the test_func() method to access the view.
+    Deletes the specified post and redirects to
+    the 'all-posts' URL upon successful deletion.
     """
 
     model = Post
@@ -177,12 +180,16 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         """
-        Checks if the current user is the author of the post or a superuser.
-        Returns True if the current user is the author of the comment, False otherwise.
+        Checks if the current user is the author
+        of the post or a superuser.
+        Returns True if the current user is the author
+        of the comment, False otherwise.
         """
 
         post = self.get_object()
-        return self.request.user == post.author or self.request.user.is_superuser
+        is_author = self.request.user == post.author
+        is_superuser = self.request.user.is_superuser
+        return is_author or is_superuser
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -234,7 +241,8 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     A view for updating a comment.
-    Requires the user to be logged in and pass the test_func() method to update the comment.
+    Requires the user to be logged in and pass the
+    test_func() method to update the comment.
     """
 
     model = Comment
@@ -244,7 +252,8 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         """
         Check if the current user is the author of the comment.
-        Returns True if the current user is the author of the comment, False otherwise.
+        Returns True if the current user is the author of the comment,
+        False otherwise.
         """
 
         comment = self.get_object()
@@ -275,7 +284,8 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     A view for deleting a comment.
-    Requires the user to be logged in and the comment author to delete the comment.
+    Requires the user to be logged in
+    and the comment author to delete the comment.
     """
 
     model = Comment
@@ -283,12 +293,16 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         """
-        Checks if the current user is the author of the comment.
-        Returns True if the current user is the author of the comment, False otherwise.
+        Checks if the current user is
+        the author of the comment.
+        Returns True if the current user
+        is the author of the comment, False otherwise.
         """
 
         comment = self.get_object()
-        return self.request.user == comment.author or self.request.user.is_superuser
+        is_author = self.request.user == comment.author
+        is_superuser = self.request.user.is_superuser
+        return is_author or is_superuser
 
     def get_success_url(self):
         """
