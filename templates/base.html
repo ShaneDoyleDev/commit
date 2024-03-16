@@ -104,8 +104,6 @@
                     {% endif %}
                     <li><a href="{% url "about" %}" class="navbar-menu-link">About</a></li>
 
-                    <hr>
-
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm">Create post</a></li>
                         <li><a href="{% url 'logout' %}" class="btn btn-primary btn-lg">Logout</a></li>
