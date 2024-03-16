@@ -6,8 +6,10 @@ register = template.Library()
 @register.filter(name='category_color')
 def category_color(category):
     """
-    Returns the CSS variable name for the color associated with a category.
-    If the category is not found, returns the CSS variable name for the primary color.
+    Returns the CSS variable name for the
+    color associated with a category.
+    If the category is not found, returns
+    the CSS variable name for the primary color.
     """
 
     variables = {
