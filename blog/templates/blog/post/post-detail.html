@@ -15,10 +15,10 @@
         <div class="post-detail-image-container">
             {% if user.is_authenticated and user == post.author or user.is_superuser %}
                 <div class="post-btn-container" style="top: 20px; right: 30px; gap: 20px;">
-                    <a type="submit" class="btn btn-circle" href="{% url "update-post" post.id %}" style="border: var({{ post.category|category_color }}) 3px solid;">
+                    <a type="submit" class="btn btn-circle" href="{% url "update-post" post.id %}" style="border: var({{ post.category|category_color }}) 3px solid;" aria-label="Update post">
                         <img src="{% static "images/icons/edit-icon.svg" %}" alt="Edit icon of a pencil">
                     </a>
-                    <a type="submit" class="btn btn-circle" href="{% url "delete-post" post.id %}" style="border: var({{ post.category|category_color }}) 3px solid;">
+                    <a type="submit" class="btn btn-circle" href="{% url "delete-post" post.id %}" style="border: var({{ post.category|category_color }}) 3px solid;" aria-label="Delete post">
                         <img src="{% static "images/icons/cross-icon.svg" %}" alt="Cross icon for deleting a post">
                     </a>
                 </div>
@@ -94,7 +94,7 @@
                         <button type="submit" style="width: max-content;" class="btn btn-primary btn-sm">Publish</button>
                     </form>
                 {% else %}
-                    <p>Have something to say? <a class="link-text" href="{% url "login" %}">Sign in</a> to leave a comment.</p>
+                    <p>Have something to say? <a class="link-text" href="{% url "login" %}" aria-label="Sign in">Sign in</a> to leave a comment.</p>
                 {% endif %}
             </section>
         </section>
