@@ -99,6 +99,10 @@ p {
   font-size: var(--fs-section-heading);
 }
 
+.post-card-title a {
+  text-decoration: none;
+}
+
 .post-detail-heading {
   font-size: var(--fs-post-detail-heading);
 }
