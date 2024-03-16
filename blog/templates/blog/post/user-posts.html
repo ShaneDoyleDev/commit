@@ -25,7 +25,7 @@
             {% else %}
                 <div class="empty-post-content">
                     <p class="empty-post-heading">Currently no posts to display.</p>
-                    <a class="btn btn-primary btn-lg empty-post-btn" href="{% url 'create-post' %}">Write post</a>
+                    <a class="btn btn-primary btn-lg empty-post-btn" href="{% url 'create-post' %}" aria-label="Write post">Write post</a>
                 </div>
             {% endif %}
         </section>
