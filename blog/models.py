@@ -49,7 +49,7 @@ class Post(models.Model):
             return static('images/default-post-image.webp')
 
     def get_author_profile_picture_url(self):
-        """Returns the URL of the author's profile picture or a default static image URL."""
+        """Returns the URL of the profile picture or a default static image."""
 
         if self.author.profile.profile_picture:
             return self.author.profile.profile_picture.url
@@ -58,7 +58,7 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Overrides the save method to automatically generate a slug if it doesn't exist.
+        Overrides the save method to generate a slug if it doesn't exist.
         """
 
         if not self.slug:
@@ -108,7 +108,7 @@ class Profile(models.Model):
     def profile_picture_url(self):
         """
         Returns the URL of the profile picture for the user.
-        If a profile picture is set, the URL of the profile picture is returned.
+        If profile picture is set, the URL of the profile picture is returned.
         """
         if self.profile_picture:
             return self.profile_picture.url
