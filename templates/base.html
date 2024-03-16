@@ -31,7 +31,7 @@
         <!-- Navigation -->
         <header id="navbar">
             <!-- Logo -->
-            <a class="logo" href="/">
+            <a class="logo" href="/" aria-label="Home">
                 <img src="{% static "images/icons/logo-icon.svg" %}" alt="Logo of Commit">
             </a>
 
@@ -48,12 +48,12 @@
             <!-- Site menu -->
             <nav class="navbar-menu-site">
                 <ul class="navbar-menu">
-                    <li><a href="{% url "homepage" %}" class="navbar-menu-link">Home</a></li>
-                    <li><a href="{% url "all-posts" %}" class="navbar-menu-link">Articles</a></li>
+                    <li><a href="{% url "homepage" %}" class="navbar-menu-link" aria-label="Home">Home</a></li>
+                    <li><a href="{% url "all-posts" %}" class="navbar-menu-link" aria-label="Articles">Articles</a></li>
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'user-posts' %}" class="navbar-menu-link">My Articles</a></li>
+                        <li><a href="{% url 'user-posts' %}" class="navbar-menu-link" aria-label="My Articles">My Articles</a></li>
                     {% endif %}
-                    <li><a href="{% url "about" %}" class="navbar-menu-link">About</a></li>
+                    <li><a href="{% url "about" %}" class="navbar-menu-link" aria-label="About">About</a></li>
                 </ul>
             </nav>
 
@@ -61,16 +61,16 @@
             <nav class="navbar-menu-auth">
                 <ul class="navbar-menu">
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm">Create Article</a></li>
-                        <li><a href="{% url 'logout' %}" class="btn btn-primary btn-sm">Logout</a></li>
-                        <a href="{% url "profile" user.profile.id %}">
+                        <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm" aria-label="Create Article">Create Article</a></li>
+                        <li><a href="{% url 'logout' %}" class="btn btn-primary btn-sm" aria-label="Logout">Logout</a></li>
+                        <a href="{% url "profile" user.profile.id %}" aria-label="My Profile">
                             <li class="navbar-profile-container">
-                                <img class="navbar-profile-image" src="{{ user.profile.profile_picture_url }}">My Profile
+                                <img class="navbar-profile-image" src="{{ user.profile.profile_picture_url }}" alt="Profile Picture">My Profile
                             </li>
                         </a>
                     {% else %}
-                        <li><a href="{% url 'login' %}" class="btn btn-secondary btn-sm">Login</a></li>
-                        <li><a href="{% url 'signup' %}" class="btn btn-primary btn-sm">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}" class="btn btn-secondary btn-sm" aria-label="Login">Login</a></li>
+                        <li><a href="{% url 'signup' %}" class="btn btn-primary btn-sm" aria-label="Sign Up">Sign Up</a></li>
                     {% endif %}
                 </ul>
             </nav>
@@ -90,26 +90,27 @@
                 <!-- Dropdown menu -->
                 <ul class="navbar-dropdown-menu">
                     <li>
-                        <a href="/">
+                        <a href="/" aria-label="Home">
                             <img src="{% static "images/icons/logo-icon.svg" %}" alt="Logo of Commit">
                         </a>
                     </li>
                     {% if user.is_authenticated %}
-                        <a href="{% url "profile" user.profile.id %}">My Profile</a>
-                    </li>
+                        <li>
+                            <a href="{% url "profile" user.profile.id %}" aria-label="My Profile">My Profile</a>
+                        </li>
                     {% endif %}
-                    <li><a href="/" class="navbar-menu-link">Articles</a></li>
+                    <li><a href="/" class="navbar-menu-link" aria-label="Articles">Articles</a></li>
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'user-posts' %}" class="navbar-menu-link">My Articles</a></li>
+                        <li><a href="{% url 'user-posts' %}" class="navbar-menu-link" aria-label="My Articles">My Articles</a></li>
                     {% endif %}
-                    <li><a href="{% url "about" %}" class="navbar-menu-link">About</a></li>
+                    <li><a href="{% url "about" %}" class="navbar-menu-link" aria-label="About">About</a></li>
 
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm">Create post</a></li>
-                        <li><a href="{% url 'logout' %}" class="btn btn-primary btn-lg">Logout</a></li>
+                        <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm" aria-label="Create post">Create post</a></li>
+                        <li><a href="{% url 'logout' %}" class="btn btn-primary btn-lg" aria-label="Logout">Logout</a></li>
                     {% else %}
-                        <li><a href="{% url 'login' %}" class="btn btn-secondary btn-lg">Login</a></li>
-                        <li><a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}" class="btn btn-secondary btn-lg" aria-label="Login">Login</a></li>
+                        <li><a href="{% url 'signup' %}" class="btn btn-primary btn-lg" aria-label="Sign Up">Sign Up</a></li>
                     {% endif %}
                 </ul>
             </nav>
@@ -125,10 +126,10 @@
 
             <!-- Footer content -->
             <div class="footer-content">
-                <a class="color-perspectives-category" href="#navbar">
+                <a class="color-perspectives-category" href="#navbar" aria-label="Back to top">
                     Back to top <img class="footer-icon"  src="{% static "images/icons/arrow-up-icon.svg" %}" alt="Arrow up icon" width="13" height="13">
                 </a>
-                <p>Made with <img class="footer-icon" src="{% static "images/icons/heart-icon-solid.svg" %}" alt="Heart icon" width="16" height="16"> by <a class="color-perspectives-category" href="https://github.com/ShaneDoyleDev">Shane Doyle</a></p>
+                <p>Made with <img class="footer-icon" src="{% static "images/icons/heart-icon-solid.svg" %}" alt="Heart icon" width="16" height="16"> by <a class="color-perspectives-category" href="https://github.com/ShaneDoyleDev" aria-label="Shane Doyle GitHub">Shane Doyle</a></p>
             </div>
         </footer>
 
