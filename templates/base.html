@@ -63,11 +63,13 @@
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'create-post' %}" class="btn btn-secondary btn-sm" aria-label="Create Article">Create Article</a></li>
                         <li><a href="{% url 'logout' %}" class="btn btn-primary btn-sm" aria-label="Logout">Logout</a></li>
-                        <a href="{% url "profile" user.profile.id %}" aria-label="My Profile">
-                            <li class="navbar-profile-container">
-                                <img class="navbar-profile-image" src="{{ user.profile.profile_picture_url }}" alt="Profile Picture">My Profile
-                            </li>
-                        </a>
+                        <li>
+                            <a href="{% url "profile" user.profile.id %}" aria-label="My Profile">
+                                <div class="navbar-profile-container">
+                                    <img class="navbar-profile-image" src="{{ user.profile.profile_picture_url }}" alt="Profile Picture">My Profile
+                                </div>
+                            </a>
+                        </li>
                     {% else %}
                         <li><a href="{% url 'login' %}" class="btn btn-secondary btn-sm" aria-label="Login">Login</a></li>
                         <li><a href="{% url 'signup' %}" class="btn btn-primary btn-sm" aria-label="Sign Up">Sign Up</a></li>
