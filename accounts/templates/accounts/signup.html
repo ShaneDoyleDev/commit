@@ -14,7 +14,11 @@
         <img class="form-image" src="{% static "images/icons/form-icon.svg" %}" alt="a decortive form element">
         <form class="form" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            {% for field in form %}
+                {{ field.label_tag }}
+                {{ field.errors }}
+                {{ field }}
+            {% endfor %}
             <button class="btn btn-primary btn-lg" type="submit">Sign Up</button>
         </form>
 
