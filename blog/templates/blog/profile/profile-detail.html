@@ -13,15 +13,15 @@
         <header class="profile-detail-container profile-detail-top">
             <img class="user-profile-image" src="{{ profile.profile_picture_url }}" alt="Profile picture of {{ profile.user.first_name|title }} {{ profile.user.last_name|title }}">
             <section class="profile-top-info">
-                <h1>{{ profile.user.username|title }} </h1>
-                <section>
+                <h1>{{ profile.user.username|title }}</h1>
+                <div>
                     {% if profile.profession %}
                         <p class="color-grey">{{ profile.profession|title }}</p>
                     {% else %}
                         <p class="color-grey">Profession</p>
                     {% endif %}
                     <p class="color-grey">{% if profile.city %}{{ profile.city|title }}{% else %}City{% endif %}, {% if profile.country %}{{ profile.country|title }}{% else %}Country{% endif %}</p>
-                </section>
+                </div>
                 {% if user.is_authenticated and user == profile.user or user.is_superuser %}
                     <a class="btn btn-circle profile-edit-btn" href="{% url "update-profile" profile.id %}" aria-label="Edit profile">
                         <img src="{% static "images/icons/edit-icon.svg" %}" alt="Edit icon">
@@ -41,14 +41,14 @@
                     <h3 class="color-grey">Last Name</h3>
                     <p>{{ profile.user.last_name }}</p>
                 </section>
-                <section class="profile-detail-field profile-dob">
+                <div class="profile-detail-field profile-dob">
                     <h3 class="color-grey">Date Of Birth</h3>
                     {% if profile.birthday %}
                         <p>{{ profile.birthday }}</p>
                     {% else %}
                         <p>None</p>
                     {% endif %}
-                </section>
+                </div>
                 <section class="profile-detail-field profile-email">
                     <h3 class="color-grey">Email</h3>
                     <p>{{ profile.user.email|default:"None" }}</p>
@@ -62,7 +62,7 @@
 
         <section class="profile-detail-container profile-detail-social">
             <h2 class="profile-detail-heading">Social Information</h2>
-            <section class="profile-detail-grid">
+            <div class="profile-detail-grid">
                 <section class="profile-detail-field profile-website">
                     <h3 class="color-grey">Personal Website</h3>
                     <p>{{ profile.website_url|default:"None" }}</p>
@@ -79,7 +79,7 @@
                     <h3 class="color-grey">Medium</h3>
                     <p>{{ profile.medium_url|default:"None" }}</p>
                 </section>
-            </section>
+            </div>
         </section>
     </main>
 {% endblock %}
