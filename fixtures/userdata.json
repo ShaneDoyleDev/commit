@@ -1,0 +1,46 @@
+[
+  {
+    "model": "auth.user",
+    "fields": {
+      "username": "alexander_johnson91",
+      "first_name": "Alexander",
+      "last_name": "Johnson",
+      "email": "alexander@example.com",
+      "password": "Innov8&Create!",
+      "date_joined": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "username": "benjamin_smith89",
+      "first_name": "Benjamin",
+      "last_name": "Smith",
+      "email": "benjamin@example.com",
+      "password": "D1g!talF0rtr3ss",
+      "date_joined": "2024-01-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "username": "sophia_anderson90",
+      "first_name": "Sophia",
+      "last_name": "Anderson",
+      "email": "sophia@example.com",
+      "password": "C0de&Coffee!24",
+      "date_joined": "2024-01-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "username": "olivia_chen93",
+      "first_name": "Olivia",
+      "last_name": "Chen",
+      "email": "oliva@example.com",
+      "password": "Quantum!Qu3st",
+      "date_joined": "2024-01-04T00:00:00Z"
+    }
+  }
+]
