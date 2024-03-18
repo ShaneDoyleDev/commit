@@ -80,7 +80,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['profile_picture', 'bio', 'birthday', 'country',
-                  'city', 'profession', 'website_url', 'github_url']
+                  'city', 'profession', 'website_url', 'github_url', 'linkedin_url', 'medium_url']
         widgets = {
             'birthday': forms.DateInput(attrs={'type': 'date'}),
         }
