@@ -1,11 +1,14 @@
 # Django imports
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.templatetags.static import static
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils import timezone
+
 
 # Third-party imports
 from cloudinary.models import CloudinaryField
@@ -104,6 +107,13 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username}\'s Profile'
+
+    def clean(self):
+        super().clean()
+        if self.birthday and self.birthday > timezone.now().date():
+            raise ValidationError({
+                'birthday': 'Invalid entry. Please ensure the Date of Birth is not set in the future.'
+            })
 
     def profile_picture_url(self):
         """
