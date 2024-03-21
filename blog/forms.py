@@ -89,4 +89,5 @@ class ProfileForm(forms.ModelForm):
         super(ProfileForm, self).__init__(*args, **kwargs)
         for field in self.fields.values():
             field.required = False
-            self.fields['profile_picture'].label = "Profile Picture"
+        self.fields['profile_picture'].label = "Profile Picture"
+        self.fields['birthday'].label = "Date of Birth"
